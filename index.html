@@ -17,12 +17,19 @@
             </div>
         </div>
         <a href="#" onclick="showPage('home')" class="title">Courses</a>
-        <button class="login-btn" onclick="showPage('login')">Login</button>
+        <button id="login-btn" class="login-btn" onclick="showPage('login')">Login</button>
     </nav>
 
     <div id="home" class="page">
-        <h1>Welcome to Our Startup</h1>
-        <p>This is the home page.</p>
+        <h1>Welcome to Our Courses Platform</h1>
+        <p>Explore our diverse range of courses designed to enhance your skills and knowledge.</p>
+        <div class="course-display-container">
+            <div class="arrow left-arrow" onclick="prevCourse()">&#9664;</div>
+            <div id="course-display" class="course-display">
+                <!-- This will display courses one by one -->
+            </div>
+            <div class="arrow right-arrow" onclick="nextCourse()">&#9654;</div>
+        </div>
     </div>
     <div id="products" class="page" style="display:none;">
         <h1>Our Products</h1>
@@ -55,12 +62,26 @@
     </div>
     <div id="login" class="page" style="display:none;">
         <h1>Login</h1>
-        <form>
+        <form id="loginForm">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br><br>
+            <input type="text" id="login-username" name="username" required><br><br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password"><br><br>
+            <input type="password" id="login-password" name="password" required><br><br>
             <button type="submit">Login</button>
+        </form>
+        <p id="login-error" style="color: red;"></p>
+        <p><a href="#" onclick="showPage('register')">New User Registration</a></p>
+    </div>
+    <div id="register" class="page" style="display:none;">
+        <h1>Register</h1>
+        <form id="registerForm">
+            <label for="reg-name">Name:</label>
+            <input type="text" id="reg-name" name="name" required><br><br>
+            <label for="reg-email">Email:</label>
+            <input type="email" id="reg-email" name="email" required><br><br>
+            <label for="reg-password">Password:</label>
+            <input type="password" id="reg-password" name="password" required><br><br>
+            <button type="submit">Register</button>
         </form>
     </div>
 

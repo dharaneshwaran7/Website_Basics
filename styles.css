@@ -108,6 +108,40 @@ form button:hover {
     margin: 10px 0;
 }
 
+.course-display-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.course-display {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-arrow {
+    left: 0;
+}
+
+.right-arrow {
+    right: 0;
+}
+
 @media (max-width: 600px) {
     nav {
         flex-direction: column;
@@ -129,5 +163,14 @@ form button:hover {
 
     .product-icon {
         margin: 0 0 10px 0;
+    }
+
+    .course-display-container {
+        flex-direction: column;
+    }
+
+    .arrow {
+        position: static;
+        transform: none;
     }
 }
